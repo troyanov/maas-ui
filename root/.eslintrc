@@ -9,9 +9,10 @@
     "window": false
   },
   "rules": {},
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
+    "allowImportExportEverywhere": true,
     "ecmaVersion": 6,
-    "allowImportExportEverywhere": true
+    "requireConfigFile": false
   }
 }
