@@ -21,6 +21,13 @@ module.exports = {
         chunks: "all",
       },
     };
+    // webpack < 5 used to include polyfills for node.js core modules by default
+    // but no longer does. The @canonical/macaroon-bakery package uses the
+    // "util" core module, so we include a polyfill here.
+    // https://github.com/juju/bakeryjs/issues/35
+    config.resolve.fallback = {
+      util: require.resolve("util"),
+    };
     config.plugins = config.plugins.filter(
       (plugin) => plugin.constructor.name !== "HtmlWebpackPlugin"
     );
