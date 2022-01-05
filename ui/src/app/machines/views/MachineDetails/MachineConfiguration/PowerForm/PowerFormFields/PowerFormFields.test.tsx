@@ -41,7 +41,7 @@ describe("PowerFormFields", () => {
         <Formik
           initialValues={{
             powerParameters: {},
-            powerType: "power-type",
+            powerType: "amt",
           }}
           onSubmit={jest.fn()}
         >
@@ -102,7 +102,7 @@ describe("PowerFormFields", () => {
       powerTypeFactory({
         description: "the Infinity gauntlet",
         missing_packages: ["green-infinity-stone", "red-infinity-stone"],
-        name: "ultimate-power",
+        name: "amt",
       }),
     ];
     const machine = machineDetailsFactory({ system_id: "abc123" });
@@ -112,7 +112,7 @@ describe("PowerFormFields", () => {
         <Formik
           initialValues={{
             powerParameters: {},
-            powerType: "ultimate-power",
+            powerType: "amt",
           }}
           onSubmit={jest.fn()}
         >
@@ -146,7 +146,7 @@ describe("PowerFormFields", () => {
             scope: PowerFieldScope.BMC,
           }),
         ],
-        name: "power-type",
+        name: "amt",
       }),
     ];
     const machine = machineDetailsFactory({
@@ -155,7 +155,7 @@ describe("PowerFormFields", () => {
         name: "pod",
       },
       power_bmc_node_count: 1,
-      power_type: "power-type",
+      power_type: "amt",
       system_id: "abc123",
     });
     const store = mockStore(state);
@@ -164,7 +164,7 @@ describe("PowerFormFields", () => {
         <Formik
           initialValues={{
             powerParameters: {},
-            powerType: "power-type",
+            powerType: "amt",
           }}
           onSubmit={jest.fn()}
         >

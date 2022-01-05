@@ -47,7 +47,7 @@ describe("AddChassisForm", () => {
               can_probe: false,
             }),
             powerTypeFactory({
-              name: "dummy",
+              name: "amt",
               description: "Dummy power type",
               fields: [
                 powerFieldFactory({

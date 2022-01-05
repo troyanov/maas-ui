@@ -364,14 +364,12 @@ describe("PowerTypeFields", () => {
           }}
           onSubmit={jest.fn()}
         >
-          <PowerTypeFields
-            customFieldProps={{ lxd: { forConfiguration: true } }}
-          />
+          <PowerTypeFields customFieldProps={{ lxd: { editing: true } }} />
         </Formik>
       </Provider>
     );
 
     expect(wrapper.find(LXDPowerFields).exists()).toBe(true);
-    expect(wrapper.find(LXDPowerFields).prop("forConfiguration")).toBe(true);
+    expect(wrapper.find(LXDPowerFields).prop("editing")).toBe(true);
   });
 });

@@ -195,7 +195,7 @@ const search = createSelector(
     (
       _state: RootState,
       terms: string | null,
-      selectedIDs: Device[DeviceMeta.PK][]
+      selectedIDs: Device[DeviceMeta.PK][] = []
     ) => ({
       terms,
       selectedIDs,

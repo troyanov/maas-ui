@@ -119,7 +119,7 @@ const search = createSelector(
     (
       _state: RootState,
       terms: string | null,
-      selectedIDs: Machine[MachineMeta.PK][]
+      selectedIDs: Machine[MachineMeta.PK][] = []
     ) => ({
       terms,
       selectedIDs,

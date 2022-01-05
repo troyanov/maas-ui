@@ -22,10 +22,13 @@ module.exports = {
       },
     };
     // webpack < 5 used to include polyfills for node.js core modules by default
-    // but no longer does. The @canonical/macaroon-bakery package uses the
-    // "util" core module, so we include a polyfill here.
+    // but no longer does. The @canonical/macaroon-bakery package uses some core
+    // module, so we include polyfills here.
     // https://github.com/juju/bakeryjs/issues/35
     config.resolve.fallback = {
+      buffer: require.resolve("buffer"),
+      crypto: require.resolve("crypto-browserify"),
+      stream: require.resolve("stream-browserify"),
       util: require.resolve("util"),
     };
     config.plugins = config.plugins.filter(
@@ -41,7 +44,7 @@ module.exports = {
   devServer: function (configFunction) {
     return function () {
       const config = configFunction();
-      config.writeToDisk = true;
+      config.devMiddleware.writeToDisk = true;
       return config;
     };
   },

@@ -61,7 +61,7 @@ describe("AddMachine", () => {
               fields: [],
             }),
             powerTypeFactory({
-              name: "dummy",
+              name: "amt",
               description: "Dummy power type",
               fields: [
                 powerFieldFactory({
@@ -202,7 +202,7 @@ describe("AddMachine", () => {
     // Select the dummy power type from the dropdown, which only has one param.
     await act(async () => {
       powerTypes.simulate("change", {
-        target: { name: "power_type", value: "dummy" },
+        target: { name: "power_type", value: "amt" },
       });
     });
     wrapper.update();
@@ -217,7 +217,7 @@ describe("AddMachine", () => {
         min_hwe_kernel: "ga-16.04",
         pool: "default",
         power_parameters: { power_address: "192.168.1.1", power_id: "1" },
-        power_type: "dummy",
+        power_type: "amt",
         pxe_mac: "11:11:11:11:11:11",
         zone: "default",
       })
@@ -241,7 +241,7 @@ describe("AddMachine", () => {
           min_hwe_kernel: "ga-16.04",
           pool: state.resourcepool.items[0],
           power_parameters: { power_address: "192.168.1.1" },
-          power_type: "dummy",
+          power_type: "amt",
           pxe_mac: "11:11:11:11:11:11",
           zone: state.zone.items[0],
         },
@@ -270,7 +270,7 @@ describe("AddMachine", () => {
       min_hwe_kernel: "ga-16.04",
       pool: "default",
       power_parameters: {},
-      power_type: "dummy",
+      power_type: "amt",
       pxe_mac: "11:11:11:11:11:11",
       zone: "default",
     });
@@ -293,7 +293,7 @@ describe("AddMachine", () => {
           min_hwe_kernel: "ga-16.04",
           pool: state.resourcepool.items[0],
           power_parameters: {},
-          power_type: "dummy",
+          power_type: "amt",
           pxe_mac: "11:11:11:11:11:11",
           zone: state.zone.items[0],
         },
